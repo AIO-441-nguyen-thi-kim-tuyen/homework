@@ -39,9 +39,9 @@ def test_sliding_window_negative_window():
 
 
 # Configure pytest-cov to track coverage for the sliding_window function
-pytest_plugins = ['pytest_cov']
-cov_source = ['homework']  # Replace with the directory containing your function
+# pytest_plugins = ['pytest_cov']
+# cov_source = ['homework']  # Replace with the directory containing your function
 
-# Run tests with coverage report (optional, adjust report type as needed)
-if __name__ == '__main__':
-    pytest.main(['-m', 'test_sliding_window', '--cov-report', 'html'])
+# # Run tests with coverage report (optional, adjust report type as needed)
+# if __name__ == '__main__':
+#     pytest.main(['-m', 'test_sliding_window', '--cov-report', 'html'])
