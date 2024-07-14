@@ -6,3 +6,4 @@ numpy==2.0.0
 opencv-python==4.10.0.84
 pillow==10.4.0
 urllib3==2.2.2
+matplotlib==3.9.1
