@@ -6,4 +6,5 @@ def test_compute_cosine_similarity():
     x = np.array([1, 2, 3, 4])
     y = np.array([1, 0, 3, 0])
     result = compute_cosine(x, y)
-    print(round(result, 3))
+    # print(round(result, 3))
+    assert round(result, 3) == 0.577

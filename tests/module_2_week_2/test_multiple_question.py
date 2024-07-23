@@ -1,6 +1,9 @@
 import numpy as np
 from homework.module_2_week_2.matrix_vector_operations import compute_vector_length, compute_vector_length_v2, \
     compute_dot_product, matrix_multi_vector, matrix_multi_matrix, inverse_matrix
+from homework.module_2_week_2.multiple_choice_question import question_3_multiply_matrix_vector, \
+    question_4_multiply_matrix_vector, \
+    question_7_multiply_matrix_matrix, question_8_multiply_vector_matrix, question_9_multiply_vector_matrix
 
 
 # Question 1
@@ -27,19 +30,13 @@ def test_compute_dot_product():
 
 # Question 3
 def test_compute_dot_product_2():
-    x = np.array([[1, 2], [3, 4]])
-    k = np.array([1, 2])
-    arr = x.dot(k)
-    # print('result \n', x.dot(k))
+    arr = question_3_multiply_matrix_vector()
     assert all(arr == np.array([5, 11]))
 
 
 # Question 4
 def test_compute_dot_product_3():
-    x = np.array([[-1, 2], [3, -4]])
-    k = np.array([1, 2])
-    arr = x @ k
-    # print('result \n', x @ k)
+    arr = question_4_multiply_matrix_vector()
     assert (arr == np.array([3, -5])).all()
 
 
@@ -63,30 +60,19 @@ def test_matrix_multi_matrix():
 
 # Question 7
 def test_matrix_multi_matrix_2():
-    m1 = np.eye(3)
-    m2 = np.array([[1, 1, 1], [2, 2, 2], [3, 3, 3]])
-    result = m1 @ m2
-    # print(result)
-    assert (result == np.array([[1, 1, 1], [2, 2, 2], [3, 3, 3]]))
+    result = question_7_multiply_matrix_matrix()
+    assert (result == np.array([[1, 1, 1], [2, 2, 2], [3, 3, 3]])).all()
 
 
 # Question 8
 def test_matrix_multi_matrix_3():
-    m1 = np.eye(2)
-    m1 = np.reshape(m1, (-1, 4))[0]
-    m2 = np.array([[1, 1, 1, 1], [2, 2, 2, 2], [3, 3, 3, 3], [4, 4, 4, 4]])
-    result = m1 @ m2
-    # print(result)
+    result = question_8_multiply_vector_matrix()
     assert (result == np.array([5, 5, 5, 5])).all()
 
 
 # Question 9
 def test_matrix_multi_matrix_4():
-    m1 = np.array([[1, 2], [3, 4]])
-    m1 = np.reshape(m1, (-1, 4), "F")[0]
-    m2 = np.array([[1, 1, 1, 1], [2, 2, 2, 2], [3, 3, 3, 3], [4, 4, 4, 4]])
-    result = m1 @ m2
-    # print(result)
+    result = question_9_multiply_vector_matrix()
     assert (result == np.array([29, 29, 29, 29])).all()
 
 
