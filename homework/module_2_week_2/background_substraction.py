@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
-
+import os
+from PIL import Image
 
 class BackgroundSubtractor:
     DEFAULT_RESIZE_WIDTH = 678
@@ -89,18 +90,11 @@ class BackgroundSubtractor:
         """
         Resize các ảnh đầu vào về cùng kích thước
         """
-        if self.foreground_object:
-            self.foreground_object = self.resize(self.foreground_object)
-        else:
-            return
-        if self.background_image:
-            self.background_image = self.resize(self.background_image)
-        else:
-            return
-        if self.target_background_image:
-            self.target_background_image = self.resize(self.target_background_image)
-        else:
-            return
+        self.foreground_object = self.resize(self.foreground_object)
+
+        self.background_image = self.resize(self.background_image)
+
+        self.target_background_image = self.resize(self.target_background_image)
 
         difference_single_channel = self.compute_difference(self.background_image, self.foreground_object)
         binary_mask = self.compute_binary_mask(difference_single_channel)
@@ -110,9 +104,12 @@ class BackgroundSubtractor:
 
 # Sử dụng lớp BackgroundSubtractor
 if __name__ == "__main__":
-    foreground_object = 'path_to_your_foreground_object_image.jpg'
-    background_image = 'path_to_your_background_image.jpg'
-    target_background_image = 'path_to_your_target_background_image.jpg' # Đường dẫn đến hình ảnh nền thay thế
+
+    foreground_object = os.path.join(os.path.dirname(__file__),  os.path.pardir, os.path.pardir, 'tests', 'module_2_week_2', 'image_data', 'Object.png')
+    background_image = os.path.join(os.path.dirname(__file__), os.path.pardir, os.path.pardir, 'tests', 'module_2_week_2', 'image_data', 'GreenBackground.png')
+    target_background_image = os.path.join(os.path.dirname(__file__), os.path.pardir, os.path.pardir, 'tests', 'module_2_week_2', 'image_data',
+                                           'NewBackground.jpg')  # Đường dẫn đến hình ảnh nền thay thế
     bg_subtractor = BackgroundSubtractor(foreground_object, background_image, target_background_image)
     output = bg_subtractor.process_frame()
-    cv2.imshow(output)
+    image = Image.fromarray(output)
+    image.show()

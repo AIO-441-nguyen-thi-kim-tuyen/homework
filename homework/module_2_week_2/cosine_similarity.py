@@ -1,5 +1,5 @@
 import numpy as np
-from matrix_vector_operations import compute_dot_product, compute_vector_length
+from homework.module_2_week_2.matrix_vector_operations import compute_dot_product, compute_vector_length
 
 
 def compute_cosine(v1, v2):
