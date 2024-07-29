@@ -6,7 +6,7 @@ def test_student_describe(capfd):
     student1.describe()
     # output
     # >> Student - Name : studentA - YoB : 2010 - Grade : 7
-    out, err = capfd.readouterr()
+    out, _ = capfd.readouterr()
     assert out.strip() == "Student:  studentA , yob: 2010, grade: 7"
 
 
@@ -15,7 +15,7 @@ def test_teacher_describe(capfd):
     teacher1.describe()
     # output
     # >> Teacher:  teacherA , yob: 1969, subject:  Math
-    out, err = capfd.readouterr()
+    out, _ = capfd.readouterr()
     assert out.strip() == "Teacher:  teacherA , yob: 1969, subject:  Math"
 
 
@@ -24,7 +24,7 @@ def test_doctor_describe(capfd):
     doctor1.describe()
     # output
     # >> Doctor - Name : doctorA - YoB : 1945 - Specialist : Endocrinologists
-    out, err = capfd.readouterr()
+    out, _ = capfd.readouterr()
     assert out.strip() == "Doctor:  doctorA , yob: 1945, specialist:  Endocrinologists"
 
 
@@ -41,7 +41,7 @@ def test_ward(capfd):
     ward1.add_person(doctor1)
     ward1.add_person(doctor2)
     ward1.describe()
-    out, err = capfd.readouterr()
+    out, _ = capfd.readouterr()
     assert out.strip() == '''Ward:  Ward1 
 Student:  studentA , yob: 2010, grade: 7
 Teacher:  teacherA , yob: 1969, subject:  Math 
@@ -66,7 +66,7 @@ def test_ward_sort_age(capfd):
     ward1.add_person(doctor2)
     ward1.sort_age()
     ward1.describe()
-    out, err = capfd.readouterr()
+    out, _ = capfd.readouterr()
     assert out.strip() == '''Ward:  Ward1 
 Doctor:  doctorA , yob: 1945, specialist:  Endocrinologists 
 Teacher:  teacherA , yob: 1969, subject:  Math 
