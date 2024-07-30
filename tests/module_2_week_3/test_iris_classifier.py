@@ -22,7 +22,7 @@ def test_predict_example_2():
     pred = classifier.predict(X)
     print("Prediction:", pred)
     # Print the model
-    classifier.print_model()
+    # classifier.print_model()
     assert pred == "Iris-versicolor"
 
 
