@@ -1,3 +1,5 @@
+import os.path
+
 import numpy as np
 import math
 
@@ -57,7 +59,8 @@ class GaussianNaiveBayes:
 def create_train_data_iris():
     # Assuming iris.data.txt is in the same directory with the following format
     # sepal length, sepal width, petal length, petal width, class
-    data = np.loadtxt("iris.data.txt", delimiter=",", dtype=str)
+    file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, os.path.pardir, "tests", "module_2_week_3", "iris.data.txt"))
+    data = np.loadtxt(file_path, delimiter=",", dtype=str)
     return data
 
 
