@@ -19,7 +19,7 @@ Chào mừng bạn đến với repository chứa các bài tập AI được t�
 - [Bài tập 1: Cơ bản về Python](homework/module_1_week_2/multiple_choice_question.py)
 - [Bài tập 2: Count Characters](homework/module_1_week_2/count_chars.py)
 
-## Module 2: Học Máy
+## Module 2: Toán học trong AI 
 
 ### Tuần 1: Numpy
 ### Tuần 2: Cosine  Similarity and Data Similarity 
@@ -29,7 +29,10 @@ Chào mừng bạn đến với repository chứa các bài tập AI được t�
 - Kiến thức cơ bản về phân phối Gaussian Naive Bayes
 - [Hiện thực giải thuật Gaussian Naive Bayes cho bài toán phân loại 3 lớp](/homework/module_2_week_3/iris_classifier.py)
 
+## Module 3: Học máy
 
+### Tuần 1: Data Visualization and Analysis
+### Tuần 2: Học máy - KNN & Kmeans
 
 ---
 
