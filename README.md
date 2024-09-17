@@ -31,6 +31,9 @@ Chào mừng bạn đến với repository chứa các bài tập AI được t�
 
 ## Module 2: Toán học trong AI
 
+## Module 3: Machine Learning
+### Tuần 4: Ensemble Learning 
+
 ---
 
 # Hướng dẫn sử dụng
